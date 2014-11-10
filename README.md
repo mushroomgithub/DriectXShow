@@ -18,3 +18,4 @@
 ##软件效果:
 
 ![DriectXShow](./pic/1.jpg)
+![视频格式设置](pic/spcs.png)
