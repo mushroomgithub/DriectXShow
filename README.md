@@ -17,4 +17,4 @@
 
 ##软件效果:
 
-    ![DriectXShow](./pic/1.jpg)
+![DriectXShow](./pic/1.jpg)
