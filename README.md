@@ -14,5 +14,6 @@
 + 具体步骤:
     + 项目-项目名属性-配置属性-VC++目录-包含目录-“C:\DXSDK\Include”.
     + 项目-项目名属性-配置属性-VC++目录-包含目录-“C:\DXSDK\Lib”.
+
 ##软件效果:
     ![](~/picture/DXShow/DriectXShow.png)
