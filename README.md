@@ -6,7 +6,7 @@
 > 2、DirectShow是基于COM的，为了编写DirectShow应用程序，需要了解COM客户程序编写的基础知识。DirectShow提供了大量的接口，但在编程中发现还是不够方便，如果能构建一个视频捕捉类把常用的一些动作封装起来，那么就更方便了。
 
 **编程思路**
-> 为了更加容易建立视频捕捉应用程序，DirectShow提供了一个叫做Capture GraphBuilder的对象，Capture Graph Builder提供IcaptureGraphBuilder2接口，该接口可以建立和控制CaptureGraph。
+> 为了更加容易建立视频捕捉应用程序，DirectShow提供了一个叫做Capture Graph Builder的对象，Capture Graph Builder提供IcaptureGraphBuilder2接口，该接口可以建立和控制Capture Graph。
 
 > 建立视频捕捉程序，必须首先获取并初始化IcaptureGraphBuilder2接口，然后选择一个适当的视频捕捉设备。选择好设备后，为该设备创建Capturefilter，然后调用AddFilter把Capture filter添加到Filter Graph。如果仅仅希望用摄像头来进行实时监控的话，只需要在上面的基础上调用ICaptureGraphBuilder2::RenderStream就可以了
 
@@ -16,8 +16,7 @@
 并且还提供了视频和单帧图像参数设置界面，采集的视频流和单帧图像都写在文件中，之后使用OpenCV进行音视频的处理，
 当然这是我后期要做的事情，前面部分已经完成，前半部分开发使用了因为很多东西要查，
 需要学习DXShow如何设计filter graph manger 和filter graph 的创建以及pin 的连接，最后renderstream,产生视频流，
-之后，在视频流上捕捉单帧图像数据，加入图像头，写入文件进行保存，
-为后期我使用opencv进行处理，然后讲程序移植到linux Platform(Ubuntu LTS 14.04)下重新测试,opencv音视频的处理.
+之后，在视频流上捕捉单帧图像数据，加入图像头，写入文件进行保存到文件系统.
 
 ##环境配置:
 
