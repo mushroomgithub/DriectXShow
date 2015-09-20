@@ -1,5 +1,13 @@
 #DriectXShow
 
+##前言
+　　DirectShow是微软公司提供的一套在Windows平台上进行流媒体处理的开发包，与DirectX开发包一起发布。DirectShow为多媒体流的捕捉和回放提供了强有力的支持。用DirectShow开发应用程序，我们可以很方便地从支持WDM驱动模型的采集卡上捕获数据，并且进行相应的后期处理乃至存储到文件中。
+　　DirectShow是基于COM的，为了编写DirectShow应用程序，需要了解COM客户程序编写的基础知识。DirectShow提供了大量的接口，但在编程中发现还是不够方便，如果能构建一个视频捕捉类把常用的一些动作封装起来，那么就更方便了。
+　　编程思路
+　　为了更加容易建立视频捕捉应用程序，DirectShow提供了一个叫做Capture Graph Builder的对象，Capture Graph Builder提供IcaptureGraphBuilder2接口，该接口可以建立和控制Capture Graph。
+　　建立视频捕捉程序，必须首先获取并初始化IcaptureGraphBuilder2接口，然后选择一个适当的视频捕捉设备。选择好设备后，为该设备创建Capture filter，然后调用AddFilter把Capture filter添加到Filter Graph。
+　　如果仅仅希望用摄像头来进行实时监控的话，只需要在上面的基础上调用ICaptureGraphBuilder2::RenderStream就可以了
+
 >本程序在VS2010 PlatForm采用Micosoft 的DriectXShow9.0b SDK编写的一套实时视频捕捉，采集功能，
 并且还提供了视频和单帧图像参数设置界面，采集的视频流和单帧图像都写在文件中，之后使用OpenCV进行音视频的处理，
 当然这是我后期要做的事情，前面部分已经完成，前半部分开发使用了因为很多东西要查，
